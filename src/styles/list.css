@@ -1,0 +1,17 @@
+.grid {
+	display: grid;
+	gap: 1.5rem;
+	grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+	margin: auto auto;
+	padding: 24px;
+	background-color: var(--color-secondary);
+	border-radius: 10px;
+	max-width: calc(100% - 250px);
+	max-height: calc(100% - 160px);
+}
+
+@media screen and (max-width: 960px) {
+	.grid {
+		grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+	}
+}

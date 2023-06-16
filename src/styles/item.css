@@ -1,0 +1,48 @@
+.name {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--color-shadow);
+	text-align: center;
+	padding: 1rem;
+	height: 4rem;
+	transition: 0.4s;
+	transform: perspective(1px) translateZ(0);
+}
+
+.buttonGr {
+	padding: 1rem;
+	border: 1px solid var(--color-third);
+	cursor: pointer;
+	color: var(--font-color);
+	border-radius: 10px;
+	overflow: hidden;
+	outline: none;
+	letter-spacing: 1px;
+	transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+}
+
+.buttonGr::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+}
+
+.name:hover {
+	background-color: var(--color-hover);
+}
+
+.name::before {
+	clip-path: circle(0.5% at 50% 50%);
+	background: var(--color-hover);
+	transition: 0.4s;
+	opacity: 1;
+}
+
+.name:hover::before {
+	clip-path: circle(100% at 50% 50%);
+}

@@ -1,0 +1,88 @@
+.filter {
+	width: fit-content;
+	margin: 10px 20px 20px 20px;
+}
+
+.filter ul {
+	list-style: none;
+	padding: 0; /* Если убираю, то кнопки становятся красивее */
+	width: calc(236px - 36px);
+}
+
+.inptlist {
+	margin: 5px;
+}
+
+.title {
+	background-color: var(--color-secondary);
+	color: var(--font-color);
+	padding: 18px;
+	width: calc(200px - 36px);
+	border-bottom: 1px solid var(--color-accent);
+	text-align: center;
+	outline: none;
+	font-size: 15px;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	letter-spacing: 1px;
+}
+
+.accordion {
+	background-color: var(--color-secondary);
+	color: var(--font-color);
+	cursor: pointer;
+	padding: 18px;
+	width: calc(200px - 36px);
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	letter-spacing: 1px;
+	transition: 0.4s;
+}
+
+.accordion:after {
+	content: "\002B";
+	color: var(--color-hover);
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+}
+
+.active:after {
+	content: "\2212";
+}
+
+.content {
+	width: 100%;
+	padding: 0 18px;
+	background-color: var(--color-third);
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.2s ease-out;
+}
+
+.inputs input {
+	display: none;
+}
+
+.inputs {
+	width: 100%;
+	display: block;
+}
+
+.inputs .name {
+	/* width: 100%; */
+	display: block;
+	cursor: pointer;
+	border-radius: 10px;
+	border: none;
+	padding: 10px;
+	color: var(--font-color);
+	transition: all 0.15s ease-in-out;
+}
+
+.inputs input:checked + .name {
+	background-color: var(--color-hover);
+	/* font-weight: 600; */
+}

@@ -1,0 +1,108 @@
+.form {
+	align-self: center;
+	background: var(--color-secondary);
+	border-radius: 20px;
+	width: 600px;
+	padding: 20px;
+}
+
+.forms {
+	display: flex;
+	flex-direction: column;
+	padding: 10px 10px 0 10px;
+}
+
+.article {
+	padding: 25px;
+	font-size: 2rem;
+	text-align: center;
+}
+
+.control {
+	color: var(--font-color);
+	margin: 8px;
+	padding: 14px;
+	background: var(--color-shadow);
+	border: none;
+	border-radius: 10px;
+	font-size: 1em;
+	letter-spacing: 1px;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	box-sizing: border-box;
+}
+
+.control:focus {
+	outline: 1px solid var(--color-hover);
+}
+
+.button {
+	font-size: 18px;
+	padding: 12px 30px;
+	margin-top: 25px;
+	border: none;
+	cursor: pointer;
+	color: var(--font-color);
+	border-radius: 8px;
+	align-self: center;
+	overflow: hidden;
+	outline: none;
+	display: inline-block;
+	letter-spacing: 1px;
+	transition: all 0.4s cubic-bezier(.86, .01, .15, .99);
+}
+
+.btn {
+	color: var(--font-color);
+	background-color: var(--color-third);
+	transition: 0.4s;
+	transform: perspective(1px) translateZ(0);
+}
+
+.button::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+}
+
+.btn:hover {
+	color: var(--font-color);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn::before {
+	clip-path: circle(0.5% at 50% 50%);
+	background: var(--color-hover);
+	transition: 0.4s;
+	opacity: 1;
+}
+
+.btn:hover::before {
+	clip-path: circle(100% at 50% 50%);
+}
+
+.errorMessage {
+	color: #ee0b0b;
+	text-align: center;
+	margin: 2px;
+}
+
+.alert {
+	text-align: left;
+	margin: 5px 0 0 14px;
+	font-size: 1rem;
+}
+
+.link {
+	color: var(--color-hover);
+	text-decoration: none;
+}
+
+@media screen and (max-width: 960px) {
+  .form {
+		width: calc(960px - 600px);
+	}
+}

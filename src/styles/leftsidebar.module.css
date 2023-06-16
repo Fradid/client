@@ -1,0 +1,77 @@
+.filter {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.image {
+	border-radius: 10px;
+	width: 150px;
+	height: 150px;
+	margin-top: 10px;
+	object-fit: cover;
+}
+
+.profile {
+	width: 250px;
+	text-align: center;
+	margin: 20px 20px 10px 20px;
+}
+
+.pName {
+	font-size: 2em;
+	margin: 6px 0 6px 0;
+}
+
+.pInfo {
+	font-size: 1.2em;
+	margin: 6px 0 6px 0;
+}
+
+.menu {
+	display: none;
+}
+
+@media screen and (max-width: 960px) {
+	.menu {
+		display: block;
+		position: fixed;
+		top: 80px;
+		left: 0;
+		padding: 8px;
+		border-radius: 8px;
+		background-color: var(--color-third);
+		transform: translate(-15%, 180%);
+		font-size: 1.5rem;
+		cursor: pointer;
+		transition: all 0.5s ease;
+	}
+
+	.menu.active {
+		left: 50%;
+		z-index: 10;
+		transition: all 0.5s ease;
+	}
+
+	.filter {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 50%;
+		height: 90vh;
+		position: absolute;
+		top: 80px;
+		left: -100%;
+		opacity: 1;
+		transition: all 0.5s ease;
+	}
+
+	.filter.active {
+		background: var(--color-shadow);
+		left: 0;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: 1;
+		/* position: fixed; если активировать этот пункт, то фильтр будет двигаться когда пользователь скролит */
+	}
+}

@@ -1,0 +1,233 @@
+.navbar {
+	height: 80px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.2rem;
+	background-color: var(--color-secondary);
+	border-bottom: 1px solid var(--color-accent);
+	border-radius: 0px 0px 20px 20px;
+}
+
+.navbarLogo {
+	color: var(--font-color);
+	justify-self: auto;
+	margin-left: 20px;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 2rem;
+}
+
+.navMenu {
+	display: flex;
+	list-style: none;
+	text-align: center;
+	width: 60vw;
+	justify-content: flex-end;
+	margin-right: 2rem;
+}
+
+.navItem {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 80px;
+}
+
+.navLinks {
+	color: var(--font-color);
+	text-decoration: none;
+	padding: 0.5rem 1rem;
+}
+
+.menuIcon {
+	display: none;
+}
+
+.btn {
+	display: none;
+}
+
+.button {
+	display: none;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 40px;
+	width: 40px;
+	left: 0px;
+	bottom: 4px;
+	top: 0;
+	bottom: 0;
+	margin: auto 0;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	box-shadow: 0 0px 15px #2020203d;
+	background: white url("https://i.ibb.co/FxzBYR9/night.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+input:checked + .slider {
+	background-color: #2196f3;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(24px);
+	-ms-transform: translateX(24px);
+	transform: translateX(24px);
+	background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.image {
+	max-height: 64px;
+	width: auto;
+	height: auto;
+}
+
+@media screen and (max-width: 960px) {
+	.navbar {
+		justify-content: flex-start;
+	}
+
+	.NavbarItems {
+		position: relative;
+	}
+
+	.navMenu {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		height: 90vh;
+		position: absolute;
+		top: 80px;
+		left: -100%;
+		opacity: 1;
+		transition: all 0.5s ease;
+	}
+
+	.navMenu.active {
+		background: var(--color-shadow);
+		left: 0;
+		opacity: 1;
+		transition: all 0.5s ease;
+		z-index: 1;
+	}
+
+	.navLinks {
+		text-align: center;
+		padding: 2rem;
+		width: 100%;
+		display: table;
+	}
+
+	.navbarLogo {
+		position: absolute;
+		top: 0;
+		left: 0;
+		transform: translate(10%, 20%);
+		font-size: 1.5rem;
+	}
+
+	.menuIcon {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		transform: translate(-100%, 60%);
+		font-size: 1.8rem;
+		cursor: pointer;
+	}
+
+	.button {
+		font-size: 18px;
+		padding: 12px 24px;
+		border: none;
+		cursor: pointer;
+		color: var(--font-color);
+		border-radius: 4px;
+		overflow: hidden;
+		outline: none;
+		display: inline-block;
+		transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+	}
+
+	.btn {
+		color: var(--font-color);
+		background-color: var(--color-third);
+		transition: 0.4s;
+		transform: perspective(1px) translateZ(0);
+	}
+
+	.button::before {
+		content: "";
+		position: absolute;
+		z-index: -1;
+		top: 0px;
+		left: 0px;
+		right: 0px;
+		bottom: 0;
+	}
+
+	.btn:hover {
+		color: var(--font-color);
+		box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+	}
+
+	.btn::before {
+		clip-path: circle(0.5% at 50% 50%);
+		background: var(--color-hover);
+		transition: 0.4s;
+		opacity: 1;
+	}
+
+	.btn:hover::before {
+		clip-path: circle(100% at 50% 50%);
+	}
+
+	.image {
+		max-height: 40px;
+		margin-left: 10px;
+	}
+}

@@ -1,0 +1,160 @@
+.btnContainer {
+	display: flex;
+	flex-direction: column;
+}
+
+.button {
+	width: 400px;
+	height: 50px;
+	font-size: 18px;
+	padding: 12px 30px;
+	margin-top: 20px;
+	border: none;
+	cursor: pointer;
+	color: var(--font-color);
+	border-radius: 8px;
+	align-self: center;
+	overflow: hidden;
+	outline: none;
+	display: inline-block;
+	letter-spacing: 1px;
+	transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+}
+
+.btnDB {
+	font-size: 18px;
+	padding: 12px 30px;
+	margin: 10px;
+	border: none;
+	cursor: pointer;
+	color: var(--font-color);
+	border-radius: 15px;
+	align-self: center;
+	overflow: hidden;
+	outline: none;
+	display: inline-block;
+	letter-spacing: 1px;
+	transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+}
+
+.btn {
+	color: var(--font-color);
+	background-color: var(--color-third);
+	transition: 0.4s;
+	transform: perspective(1px) translateZ(0);
+}
+
+.button::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+}
+
+.btnDB::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+}
+
+.btn:hover {
+	color: var(--font-color);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn::before {
+	clip-path: circle(0.5% at 50% 50%);
+	background: var(--color-hover);
+	transition: 0.4s;
+	opacity: 1;
+}
+
+.btn:hover::before {
+	clip-path: circle(100% at 50% 50%);
+}
+
+.dataBase {
+	margin: 20px 0 10px 0;
+	font-size: 1em;
+	letter-spacing: 1px;
+	background-color: var(--color-shadow);
+	color: var(--font-color);
+	border-radius: 10px;
+	padding: 10px;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.dataBase:focus {
+	outline: 1px solid var(--color-hover);
+}
+
+.sorted {
+	color: var(--font-color);
+	background-color: var(--color-secondary);
+	border-radius: 20px;
+	margin: 20px 0 20px 0;
+	width: calc(100% - 600px);
+}
+
+.sorted ul {
+	list-style: none;
+	padding: 10px;
+}
+
+.sorted li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px;
+	padding-left: 50px;
+	border-radius: 10px;
+	background-color: var(--color-accent);
+}
+
+.name {
+	padding: 18px;
+	color: var(--font-color);
+	text-align: center;
+	outline: none;
+	letter-spacing: 1px;
+	font-size: 1.2rem;
+}
+
+.edit:hover {
+	cursor: pointer;
+	background-color: var(--color-hover);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.attention {
+	text-align: center;
+	padding: 50px;
+}
+
+.wid {
+	width: 400px;
+}
+
+@media screen and (max-width: 960px) {
+	.sorted {
+		width: auto;
+	}
+
+	.button {
+		width: 300px;
+	}
+
+	.dataBase {
+		width: 300px;
+		align-self: center;
+	}
+}

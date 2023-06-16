@@ -1,0 +1,162 @@
+.image {
+	border-radius: 10px;
+	width: 150px;
+	height: 150px;
+	margin-top: 10px;
+	object-fit: cover;
+}
+
+.profile {
+	display: flex;
+	text-align: center;
+	margin: 20px 20px 10px 20px;
+}
+
+.info {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 50px 0px;
+}
+
+.pName {
+	font-size: 2em;
+	margin: 6px 0 6px 0;
+}
+
+.pInfo {
+	font-size: 1.2em;
+	margin: 6px 0 6px 0;
+}
+
+.lessons {
+	background-color: var(--color-secondary);
+	border-radius: 20px;
+	width: calc(100% - 600px);
+	margin: 10px 20px 20px 20px;
+}
+
+.lessons ul {
+	list-style: none;
+	padding: 10px;
+}
+
+.lessons li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px;
+	padding-left: 50px;
+	border-radius: 10px;
+	background-color: var(--color-accent);
+}
+
+.edit:hover {
+	cursor: pointer;
+	background-color: var(--color-hover);
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.name {
+	color: var(--font-color);
+	padding: 18px;
+	text-align: center;
+	outline: none;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+}
+
+.button {
+	z-index: 0;
+	font-size: 18px;
+	padding: 12px 11px 12px 15px;
+	border: none;
+	cursor: pointer;
+	color: var(--font-color);
+	border-radius: 20px;
+	align-self: center;
+	overflow: hidden;
+	outline: none;
+	display: inline-block;
+	letter-spacing: 1px;
+	transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+}
+
+.buttonLess {
+	font-size: 18px;
+	padding: 12px 24px;
+	margin: 10px;
+	border: none;
+	cursor: pointer;
+	color: var(--font-color);
+	border-radius: 15px;
+	align-self: center;
+	overflow: hidden;
+	outline: none;
+	display: inline-block;
+	letter-spacing: 1px;
+	transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+}
+
+.btn {
+	margin-top: 50px;
+	align-self: flex-start;
+	color: var(--font-color);
+	background-color: var(--color-third);
+	transition: 0.4s;
+	transform: perspective(1px) translateZ(0);
+}
+
+.btnLess {
+	align-self: flex-start;
+	color: var(--font-color);
+	background-color: var(--color-third);
+	transition: 0.4s;
+	transform: perspective(1px) translateZ(0);
+}
+
+.button::before,
+.buttonLess::before {
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0;
+}
+
+.btn:hover,
+.btnLess:hover {
+	color: var(--font-color);
+	box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn::before,
+.btnLess::before {
+	clip-path: circle(0.5% at 50% 50%);
+	background: var(--color-hover);
+	transition: 0.4s;
+	opacity: 1;
+}
+
+.btn:hover::before,
+.btnLess:hover::before {
+	clip-path: circle(100% at 50% 50%);
+}
+
+@media screen and (max-width: 960px) {
+	.lessons {
+		width: auto;
+	}
+
+	.profile {
+		flex-direction: column;
+	}
+
+	.info {
+		margin: 10px 0 10px;
+	}
+}
